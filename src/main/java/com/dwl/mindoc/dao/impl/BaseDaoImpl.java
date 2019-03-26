@@ -23,14 +23,15 @@ public class BaseDaoImpl implements BaseDao{
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+
     @Override
     public List<TableVo> getTables(Database base) {
-        return jdbcTemplate.query(base.getTablesSql(base),new Object[]{},new BeanPropertyRowMapper(TableVo.class));
+        return (List<TableVo>)jdbcTemplate.query(base.getTablesSql(base),new Object[]{},new BeanPropertyRowMapper<TableVo>(TableVo.class));
     }
 
     @Override
     public List<ColumnVo> getColumns(Database base ,String tableName) {
-        return jdbcTemplate.query(base.getColumnSql(base ,tableName),new Object[]{},new BeanPropertyRowMapper(ColumnVo.class));
+        return (List<ColumnVo>)jdbcTemplate.query(base.getColumnSql(base ,tableName),new Object[]{},new BeanPropertyRowMapper<ColumnVo>(ColumnVo.class));
     }
 }
 

@@ -64,7 +64,7 @@ public class SQLServer implements Database {
 				"       Isnull(Columnproperty(col.id, col.NAME, 'Scale'), ''))+')' ELSE '' END \r\n" + 
 				"       END AS \r\n" + 
 				"       column_type, \r\n" + 
-				"       Isnull(ep.[value], '') \r\n" + 
+				"      convert(nvarchar, Isnull(ep.[value], '')) \r\n" + 
 				"       AS column_comment \r\n" + 
 				"       --    ,CASE \r\n" + 
 				"       --  WHEN COLUMNPROPERTY(col.id, col.name, 'IsIdentity') = 1 THEN '1' \r\n" + 
@@ -93,7 +93,7 @@ public class SQLServer implements Database {
 				"         ELSE '' \r\n" + 
 				"       END \r\n" + 
 				"       AS is_nullable, \r\n" + 
-				"       Isnull(comm.text, '') \r\n" + 
+				"       CONVERT(varchar , Isnull(comm.text, '')) \r\n" + 
 				"       AS default_value \r\n" + 
 				"--,CONVERT(NVARCHAR, ep.value) remark \r\n" + 
 				"FROM   dbo.syscolumns col \r\n" + 
