@@ -13,7 +13,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
- * Hello world!
+ * @program: mindoc
+ * @description: 另外一个启动类
+ * @author: Javaaier
+ * @create: 2019-3-16 13:39:8
  *
  */
 public class App 
@@ -140,11 +143,13 @@ public class App
 	        
 	        
 	        loginButton.addActionListener(new ActionListener() {
-				
+				/**
+				 * @Override 按钮点击事件，点击生成数据库文档
+				 */
 				public void actionPerformed(ActionEvent e) {
 					String url = urlText.getText().toString();
 					String user = userText.getText().toString();
-					String password = passwordText.getText().toString();
+					String password = passwordText.getPassword().toString();
 					String name = nameText.getText().toString();
 					String type = selectBox.getSelectedItem().toString();
 					String file = fileBox.getSelectedItem().toString();
@@ -153,7 +158,5 @@ public class App
 				}
 			});
 	        panel.add(loginButton);
-	        
-	       
 	    }
 }
