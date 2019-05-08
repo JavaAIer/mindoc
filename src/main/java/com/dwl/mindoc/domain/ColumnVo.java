@@ -6,8 +6,30 @@ package com.dwl.mindoc.domain;
  * @author: daiwenlong
  * @create: 2018-10-09 21:58
  **/
-public class ColumnVo {
-    /*列名*/
+public class ColumnVo  {
+	
+	
+	
+    public ColumnVo() {
+		
+	}
+    
+    
+
+	public ColumnVo(String columnName, String columnType, String columnKey, String isNullable, String columnComment,
+			String defaultValue) {
+		super();
+		this.columnName = columnName;
+		this.columnType = columnType;
+		this.columnKey = columnKey;
+		this.isNullable = isNullable;
+		this.columnComment = columnComment;
+		this.defaultValue = defaultValue;
+	}
+
+
+
+	/*列名*/
     private String columnName;
     /*数据类型*/
     private String columnType;
@@ -53,7 +75,7 @@ public class ColumnVo {
     }
 
 	public String getColumnComment() {
-        return columnComment;
+        return columnComment.replace("&","&amp;").replace(">","&gt;").replace("<","&lt;");
     }
 
     public void setColumnComment(String columnComment) {

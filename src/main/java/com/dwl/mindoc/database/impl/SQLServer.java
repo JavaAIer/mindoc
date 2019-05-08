@@ -30,12 +30,12 @@ public class SQLServer implements Database {
 	public String getTablesSql(Database base) {
 		 return "SELECT\r\n" + 
 		 		"	obj.name AS table_name\r\n" + 
-		 		"   ,CONVERT(NVARCHAR, cmt.value) AS table_comment\r\n" + 
+		 		"   ,isnull(CONVERT(NVARCHAR, cmt.value),'无') AS table_comment\r\n" + 
 		 		"   from dbo.sysobjects obj LEFT JOIN sys.extended_properties cmt\r\n" + 
 		 		"	ON obj.id = cmt.major_id\r\n" + 
 		 		"		AND cmt.minor_id = 0\r\n" + 
 		 		"		AND cmt.name = 'MS_Description'\r\n" + 
-		 		"		where 	 obj.xtype = 'U'\r\n" + 
+		 		"		where 	obj.name not like '%$%' and obj.xtype = 'U'\r\n" + 
 		 		"		AND obj.status >= 0\r\n" + 
 		 		"		order by 	obj.name asc";
 	}
@@ -64,7 +64,7 @@ public class SQLServer implements Database {
 				"       Isnull(Columnproperty(col.id, col.NAME, 'Scale'), ''))+')' ELSE '' END \r\n" + 
 				"       END AS \r\n" + 
 				"       column_type, \r\n" + 
-				"      convert(nvarchar, Isnull(ep.[value], '')) \r\n" + 
+				"      isnull(convert(nvarchar, Isnull(ep.[value], '')),'无') \r\n" + 
 				"       AS column_comment \r\n" + 
 				"       --    ,CASE \r\n" + 
 				"       --  WHEN COLUMNPROPERTY(col.id, col.name, 'IsIdentity') = 1 THEN '1' \r\n" + 

@@ -96,7 +96,7 @@
 							<w:rPr>
 								<w:rFonts w:hint="eastAsia" />
 							</w:rPr>
-							<w:t xml:space="preserve"> (${table.tableComment!})</w:t>
+							<w:t xml:space="preserve"> (<![CDATA[${table.tableComment!}]]>)</w:t>
 						</w:r>
 						<w:bookmarkEnd w:id="0" />
 						<w:bookmarkEnd w:id="1" />
@@ -561,7 +561,7 @@
 											<w:sz w:val="19" />
 											<w:szCs w:val="19" />
 										</w:rPr>
-										<w:t>${column.columnComment!}</w:t>
+										<w:t><![CDATA[${column.columnComment!}]]></w:t>
 									</w:r>
 									<w:bookmarkEnd w:id="20" />
 									<w:bookmarkEnd w:id="21" />
