@@ -41,7 +41,11 @@ public class TableVo  {
     }
 
     public String getTableComment() {
-        return tableComment.replace("&","&amp;").replace(">","&gt;").replace("<","&lt;");
+        if (tableComment == null || tableComment == "") {
+            return "";
+        } else {
+            return tableComment.replace("&", "&amp;").replace(">", "&gt;").replace("<", "&lt;");
+        }
     }
 
     public void setTableComment(String tableComment) {

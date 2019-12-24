@@ -75,7 +75,11 @@ public class ColumnVo  {
     }
 
 	public String getColumnComment() {
-        return columnComment.replace("&","&amp;").replace(">","&gt;").replace("<","&lt;");
+        if (columnComment == null || columnComment == "") {
+            return "";
+        } else {
+            return columnComment.replace("&", "&amp;").replace(">", "&gt;").replace("<", "&lt;");
+        }
     }
 
     public void setColumnComment(String columnComment) {
