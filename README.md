@@ -32,28 +32,28 @@ baseName=reports
 ### 运行MindocApplication
 
 #### 运行日志
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/log.png)
+![image](images/log.png)
 
 #### 生成文档
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/show.png)
+![image](images/show.png)
 
 #### 文档预览
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/table.png)
+![image](images/table.png)
 
 
 ### 桌面程序
 #### 下载mindoc-1.1.jar双击运行
 mindoc.jar只有Word格式，mindoc-1.1.jar有Word和PDF两种格式
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/desk.png)
+![image](images/desk.png)
 
 #### 填写数据库信息
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/data.png)
+![image](images/data.png)
 
 #### 点击生成按钮
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/view.png)
+![image](images/view.png)
 
 #### 文档预览
-![image](https://github.com/daiwenlong/mindoc/blob/master/images/show1.png)
+![image](images/show1.png)
 
 暂只支持MySQL，Oracle数据库
 
