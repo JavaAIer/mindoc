@@ -8,24 +8,22 @@ import java.util.List;
  * @author: daiwenlong
  * @create: 2018-10-09 21:50
  **/
-public class TableVo  {
-	
+public class TableVo {
+
     public TableVo() {
-		
-	}
 
-    
-    
-	public TableVo(String tableName, String tableComment, List<ColumnVo> columns) {
-		super();
-		this.tableName = tableName;
-		this.tableComment = tableComment;
-		Columns = columns;
-	}
+    }
 
 
+    public TableVo(String tableName, String tableComment, List<ColumnVo> columns) {
+        super();
+        this.tableName = tableName;
+        this.tableComment = tableComment;
+        Columns = columns;
+    }
 
-	/*表名*/
+
+    /*表名*/
     private String tableName;
     /*表注释*/
     private String tableComment;
@@ -42,7 +40,7 @@ public class TableVo  {
 
     public String getTableComment() {
         if (tableComment == null || tableComment == "") {
-            return "";
+            return "-";
         } else {
             return tableComment.replace("&", "&amp;").replace(">", "&gt;").replace("<", "&lt;");
         }
