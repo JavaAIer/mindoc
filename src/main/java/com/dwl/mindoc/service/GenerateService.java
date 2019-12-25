@@ -107,7 +107,7 @@ public class GenerateService {
             Map<String, Object> dataModel = new HashMap<>();
             dataModel.put("tables", tables);
             // 生成文件放在项目根目录下
-            File outFile = new File(System.getProperty("user.dir") + "\\DatabaseDesign.doc");
+            File outFile = new File(System.getProperty("user.dir") + "\\DatabaseDesign.xml");
             Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile)));
             // 第六步：调用模板对象的process方法输出文件。
             template.process(dataModel, out);
